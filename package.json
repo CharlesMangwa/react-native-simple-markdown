@@ -6,20 +6,20 @@
   },
   "version": "1.0.3",
   "description": "A component for rendering Markdown in React Native with native components.",
-  "main": "index.js",
+  "main": "Markdown.js",
   "author": "Charles Mangwa <charlesmangwa@gmail.com> (http://charlesmangwa.surge.sh)",
+  "dependencies": {
+    "lodash": "^3.6.0",
+    "simple-markdown": "git://github.com/lwansbrough/simple-markdown.git"
+  },
+  "peerDependencies": {
+    "react-native": "*"
+  },
   "keywords": [
     "react",
     "native",
-    "simple",
     "markdown",
     "md",
     "parse",
     "parser"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/CharlesMangwa/react-native-simple-markdown/issues"
-  },
-  "homepage": "https://github.com/CharlesMangwa/react-native-simple-markdown#readme"
-}
+  ]

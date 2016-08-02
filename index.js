@@ -3,47 +3,47 @@ import { View } from 'react-native'
 import SimpleMarkdown from 'simple-markdown'
 import _ from 'lodash'
 
-const styles = {
+var styles = {
   view: {
   },
   codeBlock: {
     fontFamily: 'Courier',
-    fontWeight: '500',
+    fontWeight: '500'
   },
   del: {
-    containerBackgroundColor: '#222222',
+    containerBackgroundColor: '#222222'
   },
   em: {
-    fontStyle: 'italic',
+    fontStyle: 'italic'
   },
   heading: {
-    fontWeight: '200',
+    fontWeight: '200'
   },
   heading1: {
-    fontSize: 32,
+    fontSize: 32
   },
   heading2: {
-    fontSize: 24,
+    fontSize: 24
   },
   heading3: {
-    fontSize: 18,
+    fontSize: 18
   },
   heading4: {
-    fontSize: 16,
+    fontSize: 16
   },
   heading5: {
-    fontSize: 13,
+    fontSize: 13
   },
   heading6: {
-    fontSize: 11,
+    fontSize: 11
   },
   hr: {
     backgroundColor: '#cccccc',
-    height: 1,
+    height: 1
   },
   image: {
-    height: 50,
-    width: 50,
+    height: 50, // TODO: React Native needs to support auto image size
+    width: 50 // TODO: React Native needs to support auto image size
   },
   inlineCode: {
     backgroundColor: '#eeeeee',
@@ -51,20 +51,20 @@ const styles = {
     borderRadius: 3,
     borderWidth: 1,
     fontFamily: 'Courier',
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   list: {
 
   },
   listItem: {
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   listItemBullet: {
     fontSize: 20,
-    lineHeight: 20,
+    lineHeight: 20
   },
   listItemNumber: {
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   paragraph: {
     marginTop: 10,
@@ -72,74 +72,76 @@ const styles = {
     flexWrap: 'wrap',
     flexDirection: 'row',
     alignItems: 'flex-start',
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-start'
   },
   strong: {
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   table: {
     borderWidth: 1,
     borderColor: '#222222',
-    borderRadius: 3,
+    borderRadius: 3
   },
   tableHeader: {
     backgroundColor: '#222222',
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-around'
   },
   tableHeaderCell: {
     color: '#ffffff',
     fontWeight: 'bold',
-    padding: 5,
+    padding: 5
   },
   tableRow: {
     borderBottomWidth: 1,
     borderColor: '#222222',
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-around'
   },
   tableRowLast: {
-    borderColor: 'transparent',
+    borderColor: 'transparent'
   },
   tableRowCell: {
-    padding: 5,
+    padding: 5
   },
   text: {
-    color: '#222222',
+    color: '#222222'
   },
   u: {
     borderColor: '#222222',
-    borderBottomWidth: 1,
+    borderBottomWidth: 1
   }
-}
+};
 
 
-export default class Markdown extends Component{
+var Markdown = React.createClass({
 
-  getDefaultProps() {
+  getDefaultProps: function() {
     return {
       style: styles
-    }
+    };
   },
 
-  componentWillMount() {
-    const mergedStyles = _.merge({}, styles, this.props.style)
-    let rules = require('./rules')(mergedStyles)
-    rules = _.merge({}, SimpleMarkdown.defaultRules, rules)
+  componentWillMount: function() {
+    var mergedStyles = _.merge({}, styles, this.props.style);
+    var rules = require('./rules')(mergedStyles);
+    rules = _.merge({}, SimpleMarkdown.defaultRules, rules);
 
-    const parser = SimpleMarkdown.parserFor(rules)
+    var parser = SimpleMarkdown.parserFor(rules);
     this.parse = function(source) {
-      const blockSource = source + '\n\n'
-      return parser(blockSource, {inline: false})
-    }
-    this.renderer = SimpleMarkdown.reactFor(SimpleMarkdown.ruleOutput(rules, 'react'))
+      var blockSource = source + '\n\n';
+      return parser(blockSource, {inline: false});
+    };
+    this.renderer = SimpleMarkdown.reactFor(SimpleMarkdown.ruleOutput(rules, 'react'));
   },
 
-  render() {
+  render: function() {
 
-    const child = _.isArray(this.props.children)
-      ? this.props.children.join('') : this.props.children
-    const tree = this.parse(child)
-    return <View style={[styles.view, this.props.style.view]}>{this.renderer(tree)}</View>
+    var child = _.isArray(this.props.children)
+      ? this.props.children.join('') : this.props.children;
+    var tree = this.parse(child);
+    return <View style={[styles.view, this.props.style.view]}>{this.renderer(tree)}</View>;
   }
-}
+});
+
+module.exports = Markdown;

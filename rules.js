@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createElement } from 'react'
 import { image, Text, View } from 'react-native'
 import SimpleMarkdown from 'simple-markdown'
 import _ from 'lodash'
