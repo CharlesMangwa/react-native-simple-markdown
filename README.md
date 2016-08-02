@@ -17,30 +17,30 @@ import { AppRegistry, StyleSheet, View } from 'react-native'
 import Markdown from 'react-native-simple-markdown'
 
 class MyAwesomeApp extends Component {
-    render(){
-        return(
-            <Markdown style={styles}>
-                #Who is the best dev in town?
-                {'\n\n'}
-                Probably **the one** reading this lines 😏…
-            </Markdown>
-        )
-    }
+  render(){
+    return(
+      <Markdown style={styles}>
+        #Who is the best dev in town?
+        {'\n\n'}
+        Probably **the one** reading this lines 😏…
+      </Markdown>
+    )
+  }
 }
 
 const styles = {
-    heading1: {
-        fontSize: 22,
-    },
-    strong: {
-        fontSize: 18,
-    },
-    paragraph: {
-        fontSize: 14,
-    },
-    view: {
-        borderWidth: 1,
-    },
+  heading1: {
+    fontSize: 22,
+  },
+  strong: {
+    fontSize: 18,
+  },
+  paragraph: {
+    fontSize: 14,
+  },
+  view: {
+    borderWidth: 1,
+  },
 }
 
 AppRegistry.registerComponent('MyAwesomeApp', () => MyAwesomeApp);
@@ -55,17 +55,17 @@ The Markdown will apply its style by default. However you can pass a `style` pro
 Example:
 
 ```js
-<Markdown 
-    style={{ 
-        heading1: {
-            fontSize: 20,
-        },
-        strong: {
-            fontWeight: 'bold',
-        }
-    }}
+<Markdown
+  style={{
+    heading1: {
+      fontSize: 20,
+    },
+    strong: {
+      fontWeight: 'bold',
+    }
+  }}
 >
-    #Hello 👋
+  #Hello 👋
 </Markdown>
 ```
 *Note: The text inside the parentheses denotes the element type.*
@@ -97,7 +97,7 @@ Example:
 
 _Pulll requests are welcome!_
 
-- `autolink` (`<Text>`) 
+- `autolink` (`<Text>`)
 - `blockQuote` (`<Text>`)
 - `codeBlock` (`<View>`)
 - `image` (`<Image>`) - Usable but need to herit image size
