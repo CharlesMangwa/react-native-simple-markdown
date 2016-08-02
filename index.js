@@ -115,11 +115,9 @@ const styles = {
 }
 
 class Markdown extends Component {
-
   static defaultProps = {
     style: styles
   }
-
   componentWillMount() {
     const mergedStyles = _.merge({}, styles, this.props.style)
     let rules = initialRules(mergedStyles)
@@ -132,9 +130,7 @@ class Markdown extends Component {
     }
     this.renderer = SimpleMarkdown.reactFor(SimpleMarkdown.ruleOutput(rules, 'react'))
   }
-
   render() {
-
     const child = _.isArray(this.props.children)
       ? this.props.children.join('') : this.props.children
     const tree = this.parse(child)

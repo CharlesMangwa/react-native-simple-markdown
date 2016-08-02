@@ -19,7 +19,7 @@ import Markdown from 'react-native-simple-markdown'
 class MyAwesomeApp extends Component {
     render(){
         return(
-            <Markdown {...markdownStyle}>
+            <Markdown style={styles}>
                 #Who is the best dev in town?
                 {'\n\n'}
                 Probably **the one** reading this lines 😏…
@@ -28,7 +28,7 @@ class MyAwesomeApp extends Component {
     }
 }
 
-const style = StyleSheet.create({
+const styles = {
     heading1: {
         fontSize: 22,
     },
@@ -41,9 +41,7 @@ const style = StyleSheet.create({
     view: {
         borderWidth: 1,
     },
-})
-        
-const markdownStyle = { style }
+}
 
 AppRegistry.registerComponent('MyAwesomeApp', () => MyAwesomeApp);
 ```
@@ -102,7 +100,7 @@ _Pulll requests are welcome!_
 - `autolink` (`<Text>`) 
 - `blockQuote` (`<Text>`)
 - `codeBlock` (`<View>`)
-- `image` (`<Image>`)
+- `image` (`<Image>`) - Usable but need to herit image size
 - `link` (`<Text>`)
 - `mailto` (`<Text>`)
 - `newline` (`<Text>`)
