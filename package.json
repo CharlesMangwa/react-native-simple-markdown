@@ -1,26 +1,25 @@
 {
-  "name": "react-native-markdown",
+  "name": "react-native-simple-markdown",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lwansbrough/react-native-markdown.git"
+    "url": "https://github.com/CharlesMangwa/react-native-simple-markdown.git"
   },
-  "version": "0.1.1",
-  "description": "A component for rendering Markdown in React Native",
+  "version": "1.0.0",
+  "description": "A component for rendering Markdown in React Native with native components, working with both iOS & Android.",
   "main": "Markdown.js",
-  "author": "Lochlan Wansbrough <lochie@live.com> (http://lwansbrough.com)",
-  "dependencies": {
-    "lodash": "^3.6.0",
-    "simple-markdown": "git://github.com/lwansbrough/simple-markdown.git"
-  },
-  "peerDependencies": {
-    "react-native": "*"
-  },
+  "author": "Charles Mangwa <charlesmangwa@gmail.com> (http://charlesmangwa.surge.sh)",
   "keywords": [
     "react",
     "native",
+    "simple",
     "markdown",
     "md",
     "parse",
     "parser"
-  ]
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CharlesMangwa/react-native-simple-markdown/issues"
+  },
+  "homepage": "https://github.com/CharlesMangwa/react-native-simple-markdown#readme"
 }
