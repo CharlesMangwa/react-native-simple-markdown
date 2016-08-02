@@ -13,7 +13,7 @@ All you need is import the `react-native-simple-markdown` and then use the
 
 ```js
 import React, { Component } from 'react'
-import { AppRegistry, StyleSheet, View } from 'react-native'
+import { AppRegistry } from 'react-native'
 import Markdown from 'react-native-simple-markdown'
 
 class MyAwesomeApp extends Component {
