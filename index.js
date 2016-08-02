@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { View } from 'react-native'
 import SimpleMarkdown from 'simple-markdown'
+import initialRules from './rules'
 import _ from 'lodash'
 
-var styles = {
+const styles = {
   view: {
   },
   codeBlock: {
@@ -42,8 +43,8 @@ var styles = {
     height: 1
   },
   image: {
-    height: 50, // TODO: React Native needs to support auto image size
-    width: 50 // TODO: React Native needs to support auto image size
+    width: 300,
+    height: 300,
   },
   inlineCode: {
     backgroundColor: '#eeeeee',
@@ -54,14 +55,14 @@ var styles = {
     fontWeight: 'bold'
   },
   list: {
-
   },
   listItem: {
     flexDirection: 'row'
   },
   listItemBullet: {
     fontSize: 20,
-    lineHeight: 20
+    lineHeight: 20,
+    marginTop: 6,
   },
   listItemNumber: {
     fontWeight: 'bold'
@@ -111,37 +112,34 @@ var styles = {
     borderColor: '#222222',
     borderBottomWidth: 1
   }
-};
+}
 
+class Markdown extends Component {
 
-var Markdown = React.createClass({
-
-  getDefaultProps: function() {
-    return {
-      style: styles
-    };
-  },
-
-  componentWillMount: function() {
-    var mergedStyles = _.merge({}, styles, this.props.style);
-    var rules = require('./rules')(mergedStyles);
-    rules = _.merge({}, SimpleMarkdown.defaultRules, rules);
-
-    var parser = SimpleMarkdown.parserFor(rules);
-    this.parse = function(source) {
-      var blockSource = source + '\n\n';
-      return parser(blockSource, {inline: false});
-    };
-    this.renderer = SimpleMarkdown.reactFor(SimpleMarkdown.ruleOutput(rules, 'react'));
-  },
-
-  render: function() {
-
-    var child = _.isArray(this.props.children)
-      ? this.props.children.join('') : this.props.children;
-    var tree = this.parse(child);
-    return <View style={[styles.view, this.props.style.view]}>{this.renderer(tree)}</View>;
+  static defaultProps = {
+    style: styles
   }
-});
 
-module.exports = Markdown;
+  componentWillMount() {
+    const mergedStyles = _.merge({}, styles, this.props.style)
+    let rules = initialRules(mergedStyles)
+    rules = _.merge({}, SimpleMarkdown.defaultRules, rules)
+
+    const parser = SimpleMarkdown.parserFor(rules)
+    this.parse = (source) => {
+      const blockSource = source + '\n\n'
+      return parser(blockSource, { inline: false })
+    }
+    this.renderer = SimpleMarkdown.reactFor(SimpleMarkdown.ruleOutput(rules, 'react'))
+  }
+
+  render() {
+
+    const child = _.isArray(this.props.children)
+      ? this.props.children.join('') : this.props.children
+    const tree = this.parse(child)
+    return <View style={[styles.view, this.props.style.view]}>{this.renderer(tree)}</View>
+  }
+}
+
+export default Markdown
