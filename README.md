@@ -12,20 +12,17 @@ All you need is import the `react-native-simple-markdown` and then use the
 `<Markdown />` component.
 
 ```js
-import React, { Component } from 'react'
-import { AppRegistry } from 'react-native'
+import React from 'react'
 import Markdown from 'react-native-simple-markdown'
 
-class MyAwesomeApp extends Component {
-  render(){
-    return(
-      <Markdown style={styles}>
-        #Who is the best dev in town?
-        {'\n\n'}
-        Probably **the one** reading this lines 😏…
-      </Markdown>
-    )
-  }
+const MyAwesomeApp = () => {
+  return (
+    <Markdown styles={styles}>
+      #Who is the best dev in town?
+      {'\n\n'}
+      Probably **the one** reading this lines 😏…
+    </Markdown>    
+  )
 }
 
 const styles = {
@@ -42,21 +39,18 @@ const styles = {
     borderWidth: 1,
   },
 }
-
-AppRegistry.registerComponent('MyAwesomeApp', () => MyAwesomeApp);
 ```
 
 ## Properties
-
 #### `style`
 
-The Markdown will apply its style by default. However you can pass a `style` prop to customize it has you want.
+The Markdown will apply its styles by default. However you can pass a `styles` prop to customize it has you want.
 
 Example:
 
 ```js
 <Markdown
-  style={{
+  styles={{
     heading1: {
       fontSize: 20,
     },
