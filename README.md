@@ -44,7 +44,7 @@ const styles = {
 ## Properties
 #### `style`
 
-The Markdown will apply its styles by default. However you can pass a `styles` prop to customize it has you want.
+The Markdown will apply its style by default. However you can pass a `styles` prop to customize it has you want.
 
 Example:
 
