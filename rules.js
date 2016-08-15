@@ -109,10 +109,11 @@ export default (styles) => ({
         else {
           bullet = createElement(Text, { key: state.key, style: styles.listItemBullet }, '\u2022 ')
         }
+        const listItemText = createElement(Text, { key: state.key + 1, style: styles.listItemText }, output(item, state))
         return createElement(View, {
           key: i,
           style: styles.listItem
-        }, [bullet, output(item, state)])
+        }, [bullet, listItemText])
       })
       return createElement(View, { key: state.key, style: styles.list }, items)
     }

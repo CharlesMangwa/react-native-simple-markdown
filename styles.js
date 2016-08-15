@@ -53,6 +53,12 @@ const styles = {
   listItem: {
     flexDirection: 'row',
   },
+  listItemText: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+  },
   listItemBullet: {
     fontSize: 20,
     lineHeight: 20,
