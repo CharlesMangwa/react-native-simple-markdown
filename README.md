@@ -1,7 +1,7 @@
 # react-native-simple-markdown
-[![Dependency Status](https://david-dm.org/CharlesMangwa/react-native-simple-markdown.svg?style=flat)](https://david-dm.org/CharlesMangwa/react-native-simple-markdown.svg)
 [![Build Status](https://travis-ci.org/CharlesMangwa/react-native-simple-markdown.svg?branch=master)](https://travis-ci.org/CharlesMangwa/react-native-simple-markdown)
 [![npm version](https://badge.fury.io/js/react-native-simple-markdown.svg)](https://badge.fury.io/js/react-native-simple-markdown)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)    
 
 A component for rendering Markdown in React Native with native components, working with both iOS & Android. Pull requests are welcome 😃 🎉!
 
