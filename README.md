@@ -92,7 +92,7 @@ Example:
 
 ##### WIP
 
-_Pulll requests are welcome!_
+_Most of these elements can be used, but I'm still working on some improvements. Pull requests are welcome!_
 
 - `autolink` (`<Text>`)
 - `blockQuote` (`<Text>`)
