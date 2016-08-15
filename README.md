@@ -1,4 +1,7 @@
 # react-native-simple-markdown
+[![Dependency Status](https://david-dm.org/CharlesMangwa/react-native-simple-markdown.svg?style=flat)](https://david-dm.org/CharlesMangwa/react-native-simple-markdown.svg)
+[![Build Status](https://travis-ci.org/CharlesMangwa/react-native-simple-markdown.svg?branch=master)](https://travis-ci.org/CharlesMangwa/react-native-simple-markdown)
+[![npm version](https://badge.fury.io/js/react-native-simple-markdown.svg)](https://badge.fury.io/js/react-native-simple-markdown)
 
 A component for rendering Markdown in React Native with native components, working with both iOS & Android. Pull requests are welcome 😃 🎉!
 
@@ -72,7 +75,7 @@ Example:
 - `hr` (`<View>`)
 - `heading` (`<Text>`) - Also `heading1` through `heading6`
 - `inlineCode` (`<Text>`)
-- `list` (`<View>`) - Also `listItem` (`<View>`), `listItemBullet` (`<Text>`) and `listItemNumber` (`<Text>`)
+- `list` (`<View>`) - Also `listItem` (`<View>`), `listItemBullet` (`<Text>`), `listItemNumber` (`<Text>`) and `listItemText` (`<Text>`)
 - `paragraph` (`<View>`)
 - `plainText` (`<Text>`) - Use for styling text without any associated styles
 - `strong` (`<Text>`)

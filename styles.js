@@ -53,12 +53,6 @@ const styles = {
   listItem: {
     flexDirection: 'row',
   },
-  listItemText: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-  },
   listItemBullet: {
     fontSize: 20,
     lineHeight: 20,
@@ -74,6 +68,13 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
+  },
+  listItemText: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    color: '#222222',
   },
   strong: {
     fontWeight: 'bold',
