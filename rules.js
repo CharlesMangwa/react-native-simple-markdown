@@ -1,5 +1,5 @@
 import React, { createElement } from 'react'
-import { Image, Text, View } from 'react-native'
+import { Image, Text, View, Linking } from 'react-native'
 import SimpleMarkdown from 'simple-markdown'
 import _ from 'lodash'
 
@@ -92,11 +92,23 @@ export default (styles) => ({
   },
   link: {
     react: (node, output, state) => {
-      state.withinText = true
+      state.withinText = true;
+
+      const openUrl = (url: string) => {
+        Linking.canOpenURL(url).then(supported => {
+          if (!supported) {
+            console.warn('Can\'t handle url: ' + url + ' . Try add http:// before it and try again.');
+          } else {
+            return Linking.openURL(url);
+          }
+        }).catch(err => console.warn('An error occurred in react-native-simple-markdown\'s link part', err));
+      }
+
       return createElement(Text, {
+        style: styles.autolink,
         key: state.key,
-        style: styles.autolink
-      }, output(node.content, state))
+        onPress: () => openUrl(node.target)
+      }, output(node.content, state));
     }
   },
   list: {
