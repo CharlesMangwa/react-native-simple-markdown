@@ -21,9 +21,19 @@ import Markdown from 'react-native-simple-markdown'
 const MyAwesomeApp = () => {
   return (
     <Markdown styles={styles}>
-      #Who is the best dev in town?
+      #Markdown in react-native is so cool!
       {'\n\n'}
-      Probably **the one** reading this lines 😏…
+      You can **emphasize** what you want, or just _suggest it_ 😏…
+      {'\n\n'}
+      You can even [link your website](http://charlesmangwa.surge.sh) or if you prefer: [email sombedy](mailto:charlesmangwa@gmail.com)
+      {'\n\n'}
+      Spice it up with some GIF 💃:
+      {'\n\n'}
+      ![Some GIF](https://media.giphy.com/media/dkGhBWE3SyzXW/giphy.gif)
+      {'\n\n'}
+      And even add a cool video 😎!
+      {'\n\n'}
+      [![A cool video](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](http://www.youtube.com/watch?v=dQw4w9WgXcQ)
     </Markdown>    
   )
 }
@@ -75,7 +85,10 @@ Example:
 - `hr` (`<View>`)
 - `heading` (`<Text>`) - Also `heading1` through `heading6`
 - `inlineCode` (`<Text>`)
+- `image` (`<Image>`) - Supports `.jpg`, `.png`, `.gif`, etc
+- `link` (`Text`)
 - `list` (`<View>`) - Also `listItem` (`<View>`), `listItemBullet` (`<Text>`), `listItemNumber` (`<Text>`) and `listItemText` (`<Text>`)
+- `mailTo` (`Text`)
 - `paragraph` (`<View>`)
 - `plainText` (`<Text>`) - Use for styling text without any associated styles
 - `strong` (`<Text>`)
@@ -88,7 +101,8 @@ Example:
 - `text` (`<Text>`) - Inherited by all text based elements
 - `u` (`<View>`)
 - `url` (`<Text>`)
-- `view` (`<View>`) - This is the container `View` that the Markdown is rendered in.
+- `video` (`<Image>`)
+- `view` (`<View>`) - This is the `View` container where the Markdown is render.
 
 ##### WIP
 
@@ -97,9 +111,6 @@ _Most of these elements can be used, but I'm still working on some improvements.
 - `autolink` (`<Text>`)
 - `blockQuote` (`<Text>`)
 - `codeBlock` (`<View>`)
-- `image` (`<Image>`) - Usable but need to herit image size
-- `link` (`<Text>`)
-- `mailto` (`<Text>`)
 - `newline` (`<Text>`)
 
 ## Credits

@@ -49,6 +49,9 @@ const styles = {
     fontFamily: 'Courier',
     fontWeight: 'bold',
   },
+  link: {
+    textDecorationLine: 'underline',
+  },
   list: {},
   listItem: {
     flexDirection: 'row',
@@ -60,6 +63,9 @@ const styles = {
   },
   listItemNumber: {
     fontWeight: 'bold',
+  },
+  mailTo: {
+    textDecorationLine: 'underline',
   },
   paragraph: {
     marginTop: 10,
@@ -113,6 +119,10 @@ const styles = {
     borderColor: '#222222',
     borderBottomWidth: 1,
   },
+  video: {
+    width: 300,
+    height: 300,
+  }
 }
 
 export default styles

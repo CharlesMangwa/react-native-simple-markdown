@@ -1,5 +1,5 @@
 import React, { createElement } from 'react'
-import { Image, Text, View } from 'react-native'
+import { Image, Text, View, Linking } from 'react-native'
 import SimpleMarkdown from 'simple-markdown'
 import _ from 'lodash'
 
@@ -9,7 +9,7 @@ export default (styles) => ({
       state.withinText = true
       return createElement(Text, {
         key: state.key,
-        style: styles.autolink,
+        style: styles.link,
         onPress: _.noop
       }, output(node.content, state))
     }
@@ -77,7 +77,7 @@ export default (styles) => ({
       return createElement(Image, {
         key: state.key,
         source: { uri: node.target },
-        style: styles.image
+        style: node.target.match(/youtube/) ? styles.video : styles.image
       })
     }
   },
@@ -93,9 +93,13 @@ export default (styles) => ({
   link: {
     react: (node, output, state) => {
       state.withinText = true
+      const openUrl = (url) => {
+        Linking.openURL(url).catch(error => console.warn('An error occurred: ', error))
+      }
       return createElement(Text, {
+        style: node.target.match(/@/) ? styles.mailTo : styles.link,
         key: state.key,
-        style: styles.autolink
+        onPress: () => openUrl(node.target)
       }, output(node.content, state))
     }
   },
@@ -116,16 +120,6 @@ export default (styles) => ({
         }, [bullet, listItemText])
       })
       return createElement(View, { key: state.key, style: styles.list }, items)
-    }
-  },
-  mailto: {
-    react: (node, output, state) => {
-      state.withinText = true
-      return createElement(Text, {
-        key: state.key,
-        style: styles.mailto,
-        onPress: _.noop
-      }, output(node.content, state))
     }
   },
   newline: {
@@ -206,10 +200,13 @@ export default (styles) => ({
   url: {
     react: (node, output, state) => {
       state.withinText = true
+      const openUrl = (url) => {
+        Linking.openURL(url).catch(error => console.warn('An error occurred: ', error))
+      }
       return createElement(Text, {
         key: state.key,
         style: styles.url,
-        onPress: _.noop
+        onPress: openURL(node.target)
       }, output(node.content, state))
     }
   }
