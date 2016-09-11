@@ -36,6 +36,16 @@ class Markdown extends Component {
     return SimpleMarkdown.reactFor(SimpleMarkdown.ruleOutput(rules, 'react'))(tree)
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    if (
+      this.props.children === nextProps.children &&
+      this.props.styles === nextProps.styles
+    ) {
+      return false
+    }
+    return true
+  }
+
   render() {
     return (
       <View style={[styles.view, this.props.styles.view]}>

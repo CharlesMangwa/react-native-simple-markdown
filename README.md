@@ -25,7 +25,7 @@ const MyAwesomeApp = () => {
       {'\n\n'}
       You can **emphasize** what you want, or just _suggest it_ 😏…
       {'\n\n'}
-      You can even [link your website](http://charlesmangwa.surge.sh) or if you prefer: [email sombedy](mailto:charlesmangwa@gmail.com)
+      You can even [link your website](http://charlesmangwa.surge.sh) or if you prefer: [email sombedy](mailto:email@somebody.com)
       {'\n\n'}
       Spice it up with some GIF 💃:
       {'\n\n'}
