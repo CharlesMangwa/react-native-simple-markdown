@@ -17,7 +17,6 @@ type DefaultProps = Props & {
 }
 
 class Markdown extends Component {
-
   props: Props
 
   static defaultProps: DefaultProps = {
@@ -25,7 +24,13 @@ class Markdown extends Component {
     children: '',
   }
 
-  renderContent = (children: string) => {
+  constructor(props) {
+    super(props)
+
+    this.renderContent = this.renderContent.bind(this)
+  }
+
+  renderContent() {
     const mergedStyles = Object.assign(styles, this.props.styles)
     const rules = _.merge({}, SimpleMarkdown.defaultRules, initialRules(mergedStyles))
     const child = Array.isArray(this.props.children)
@@ -49,7 +54,7 @@ class Markdown extends Component {
   render() {
     return (
       <View style={[styles.view, this.props.styles.view]}>
-        {this.renderContent(this.props.children)}
+        {this.renderContent()}
       </View>
     )
   }
