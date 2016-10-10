@@ -85,7 +85,7 @@ Example:
 - `hr` (`<View>`)
 - `heading` (`<Text>`) - Also `heading1` through `heading6`
 - `inlineCode` (`<Text>`)
-- `image` (`<Image>`) - Supports `.jpg`, `.png`, `.gif`, etc
+- `image` (`<Image>`) - You can use `resizeMode` in `<Markdown />` styles prop to set a resizeMode
 - `link` (`Text`)
 - `list` (`<View>`) - Also `listItem` (`<View>`), `listItemBullet` (`<Text>`), `listItemNumber` (`<Text>`) and `listItemText` (`<Text>`)
 - `mailTo` (`Text`)
