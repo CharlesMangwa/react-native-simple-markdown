@@ -76,6 +76,7 @@ export default (styles) => ({
     react: (node, output, state) => {
       return createElement(Image, {
         key: state.key,
+        resizeMode: 'contain',
         source: { uri: node.target },
         style: node.target.match(/youtube/) ? styles.video : styles.image
       })
