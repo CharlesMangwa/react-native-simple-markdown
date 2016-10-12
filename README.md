@@ -8,6 +8,8 @@ A component for rendering Markdown in React Native with native components, worki
 ## Getting started
 
 `npm install react-native-simple-markdown --save`
+or
+`yarn add react-native-simple-markdown`
 
 ## Usage
 
@@ -22,17 +24,17 @@ const MyAwesomeApp = () => {
   return (
     <Markdown styles={styles}>
       #Markdown in react-native is so cool!
-      {'\n\n'}
+      
       You can **emphasize** what you want, or just _suggest it_ 😏…
-      {'\n\n'}
+
       You can even [link your website](http://charlesmangwa.surge.sh) or if you prefer: [email sombedy](mailto:email@somebody.com)
-      {'\n\n'}
+
       Spice it up with some GIF 💃:
-      {'\n\n'}
+
       ![Some GIF](https://media.giphy.com/media/dkGhBWE3SyzXW/giphy.gif)
-      {'\n\n'}
+
       And even add a cool video 😎!
-      {'\n\n'}
+
       [![A cool video](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](http://www.youtube.com/watch?v=dQw4w9WgXcQ)
     </Markdown>    
   )
@@ -75,9 +77,8 @@ Example:
   #Hello 👋
 </Markdown>
 ```
-*Note: The text inside the parentheses denotes the element type.*
 
-##### Functional
+##### Features
 
 - `br` (`<Text>`)
 - `del` (`<Text>`)
@@ -111,7 +112,7 @@ _Most of these elements can be used, but I'm still working on some improvements.
 - `autolink` (`<Text>`)
 - `blockQuote` (`<Text>`)
 - `codeBlock` (`<View>`)
-- `newline` (`<Text>`)
+- `video` (`<Image>`) - Only support YouTube video. Vimeo is comming soon!
 
 ## Credits
 
