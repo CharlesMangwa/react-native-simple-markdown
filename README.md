@@ -57,7 +57,7 @@ const styles = {
 ```
 
 ## Properties
-#### `style`
+### `styles`
 
 The Markdown will apply its style by default. However you can pass a `styles` prop to customize it has you want.
 
@@ -78,7 +78,7 @@ Example:
 </Markdown>
 ```
 
-##### Features
+### Features
 
 - `br` (`<Text>`)
 - `del` (`<Text>`)
@@ -105,7 +105,7 @@ Example:
 - `video` (`<Image>`)
 - `view` (`<View>`) - This is the `View` container where the Markdown is render.
 
-##### WIP
+### WIP
 
 _Most of these elements can be used, but I'm still working on some improvements. Pull requests are welcome!_
 
