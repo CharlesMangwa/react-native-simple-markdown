@@ -112,7 +112,7 @@ _Most of these elements can be used, but I'm still working on some improvements.
 - `autolink` (`<Text>`)
 - `blockQuote` (`<Text>`)
 - `codeBlock` (`<View>`)
-- `video` (`<Image>`) - Only support YouTube video. Vimeo is comming soon!
+- `video` (`<Image>`) - Only supports YouTube video. Vimeo is coming soon!
 
 ## Credits
 
