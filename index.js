@@ -10,6 +10,7 @@ import styles from './styles'
 type Props = {
   styles: any,
   children?: string,
+  rules: Object,
 }
 
 type DefaultProps = Props & {
@@ -23,11 +24,12 @@ class Markdown extends Component {
   static defaultProps: DefaultProps = {
     styles: styles,
     children: '',
+    rules: {},
   }
 
   renderContent = (children: string) => {
     const mergedStyles = Object.assign(styles, this.props.styles)
-    const rules = _.merge({}, SimpleMarkdown.defaultRules, initialRules(mergedStyles))
+    const rules = _.merge({}, SimpleMarkdown.defaultRules, initialRules(mergedStyles), this.props.rules)
     const child = Array.isArray(this.props.children)
       ? this.props.children.join('')
       : this.props.children

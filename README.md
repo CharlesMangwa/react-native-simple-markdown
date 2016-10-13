@@ -24,7 +24,7 @@ const MyAwesomeApp = () => {
   return (
     <Markdown styles={styles}>
       #Markdown in react-native is so cool!
-      
+
       You can **emphasize** what you want, or just _suggest it_ 😏…
 
       You can even [link your website](http://charlesmangwa.surge.sh) or if you prefer: [email sombedy](mailto:email@somebody.com)
@@ -75,6 +75,29 @@ Example:
   }}
 >
   #Hello 👋
+</Markdown>
+```
+
+### `rules`
+
+The Markdown will apply its rules by default. However you can pass a `rules` prop to add your own.
+
+Exemple:
+
+```js
+<Markdown
+  rules={{
+    image: {
+      react: (node, output, state) => (
+        <MyOwnImageComponent
+          key={state.key}
+          source={{ uri: node.target }}
+        />
+      ),
+    },
+  }}
+>
+  ![Alt text](/path/to/img.jpg)
 </Markdown>
 ```
 
