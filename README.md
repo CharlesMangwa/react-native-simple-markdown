@@ -80,6 +80,29 @@ Example:
 </Markdown>
 ```
 
+### `rules`
+
+The Markdown will apply its rules by default. However you can pass a `rules` prop to add your own.
+
+Exemple:
+
+```js
+<Markdown
+  rules={{
+    image: {
+      react: (node, output, state) => (
+        <MyOwnImageComponent
+          key={state.key}
+          source={{ uri: node.target }}
+        />
+      ),
+    },
+  }}
+>
+  ![Alt text](/path/to/img.jpg)
+</Markdown>
+```
+
 ### Features
 
 - `br` (`<Text>`)
