@@ -90,7 +90,7 @@ Example:
 - `inlineCode` (`<Text>`)
 - `image` (`<Image>`) - You can use `resizeMode` in `<Markdown />` styles prop to set a resizeMode
 - `link` (`Text`)
-- `list` (`<View>`) - Also `listItem` (`<View>`), `listItemBullet` (`<Text>`), `listItemNumber` (`<Text>`) and `listItemText` (`<Text>`)
+- `list` (`<View>`) - Also `listItem` (`<View>`), `listItemBullet` (`<Text>`), `listItemBulletType` (`Unicode character`), `listItemNumber` (`<Text>`) and `listItemText` (`<Text>`)
 - `mailTo` (`Text`)
 - `paragraph` (`<View>`)
 - `plainText` (`<Text>`) - Use for styling text without any associated styles
