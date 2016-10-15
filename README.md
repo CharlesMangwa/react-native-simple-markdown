@@ -82,16 +82,16 @@ Example:
 
 ### `rules`
 
-The Markdown will apply its rules by default. However you can pass a `rules` prop to add your own.
+The Markdown will apply its rules by default. However you can pass a `rules` prop to add your own and then customize how the Markdown elements will be displayed!
 
-Exemple:
+Example:
 
 ```js
 <Markdown
   rules={{
     image: {
       react: (node, output, state) => (
-        <MyOwnImageComponent
+        <CustomImageComponent
           key={state.key}
           source={{ uri: node.target }}
         />
