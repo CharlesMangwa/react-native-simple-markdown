@@ -1,10 +1,10 @@
 {
   "name": "react-native-simple-markdown",
   "repository": {
-    "type": "git",
-    "url": "https://github.com/CharlesMangwa/react-native-simple-markdown.git"
+    "url": "https://github.com/CharlesMangwa/react-native-simple-markdown.git",
+    "type": "git"
   },
-  "version": "1.0.60-rc.1",
+  "version": "1.0.60-rc.2",
   "description": "Render Markdown in React Native with native components (iOS & Android)",
   "main": "index.js",
   "author": "Charles Mangwa <charlesmangwa@gmail.com> (http://charlesmangwa.surge.sh)",
