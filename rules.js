@@ -78,7 +78,7 @@ export default (styles) => ({
         key: state.key,
         resizeMode: styles.resizeMode ? styles.resizeMode : 'contain',
         source: { uri: node.target },
-        style: node.target.match(/youtu/) ? styles.video : styles.image
+        style: node.target.match(/youtu|vimeo/) ? styles.video : styles.image
       })
     }
   },

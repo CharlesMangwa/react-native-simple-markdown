@@ -24,7 +24,7 @@ const MyAwesomeApp = () => {
   return (
     <Markdown styles={styles}>
       #Markdown in react-native is so cool!
-      
+
       You can **emphasize** what you want, or just _suggest it_ 😏…
 
       You can even [link your website](http://charlesmangwa.surge.sh) or if you prefer: [email sombedy](mailto:email@somebody.com)
@@ -35,7 +35,9 @@ const MyAwesomeApp = () => {
 
       And even add a cool video 😎!
 
-      [![A cool video](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](http://www.youtube.com/watch?v=dQw4w9WgXcQ)
+      [![A cool video from YT](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](http://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
+      [![Another one from Vimeo](https://i.vimeocdn.com/video/399486266_640.jpg)](https://vimeo.com/57580368)
     </Markdown>    
   )
 }
@@ -102,7 +104,7 @@ Example:
 - `text` (`<Text>`) - Inherited by all text based elements
 - `u` (`<View>`)
 - `url` (`<Text>`)
-- `video` (`<Image>`)
+- `video` (`<Image>`) - Supports Youtube & Vimeo
 - `view` (`<View>`) - This is the `View` container where the Markdown is render.
 
 ### WIP
@@ -112,7 +114,6 @@ _Most of these elements can be used, but I'm still working on some improvements.
 - `autolink` (`<Text>`)
 - `blockQuote` (`<Text>`)
 - `codeBlock` (`<View>`)
-- `video` (`<Image>`) - Only supports YouTube video. Vimeo is coming soon!
 
 ## Credits
 
