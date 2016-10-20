@@ -11,6 +11,8 @@ type Props = {
   styles: any,
   children?: string,
   rules: Object,
+  whitelist: Array,
+  blacklist: Array,
 }
 
 type DefaultProps = Props & {
@@ -25,11 +27,28 @@ class Markdown extends Component {
     styles: styles,
     children: '',
     rules: {},
+    whitelist: [],
+    blacklist: [],
+  }
+
+  /** Post processes rules to strip out unwanted styling options
+    * while keeping the default 'paragraph' and 'text' rules
+    */
+  postProcessRules(preRules){
+      const defaultRules = ['paragraph', 'text']
+      if (this.props.whitelist.length){
+          return _.pick(preRules, _.concat(this.props.whitelist, defaultRules))
+      } else if (this.props.blacklist.length){
+          return _.omit(preRules, _.pullAll(this.props.blacklist, defaultRules))
+      } else {
+          return preRules
+      }
   }
 
   renderContent = (children: string) => {
     const mergedStyles = Object.assign(styles, this.props.styles)
-    const rules = _.merge({}, SimpleMarkdown.defaultRules, initialRules(mergedStyles), this.props.rules)
+
+    const rules = this.postProcessRules(_.merge({}, SimpleMarkdown.defaultRules, initialRules(mergedStyles), this.props.rules))
     const child = Array.isArray(this.props.children)
       ? this.props.children.join('')
       : this.props.children
