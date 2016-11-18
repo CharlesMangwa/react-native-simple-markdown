@@ -2,6 +2,18 @@
 
 const styles = {
   view: {},
+  blockQuote: {
+    flexDirection: 'row'
+  },
+  blockQuoteBlock: {
+    width: 3,
+    height: null,
+    backgroundColor: '#DDDDDD',
+    marginRight: 15,
+  },
+  blockQuoteText: {
+    flex: 1,
+  },
   codeBlock: {
     fontFamily: 'Courier',
     fontWeight: '500',
@@ -59,7 +71,6 @@ const styles = {
   listItemBullet: {
     fontSize: 20,
     lineHeight: 20,
-    marginTop: 6,
   },
   listItemNumber: {
     fontWeight: 'bold',

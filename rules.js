@@ -16,11 +16,16 @@ export default (styles) => ({
   },
   blockQuote: {
     react: (node, output, state) => {
+      let block
       state.withinText = true
-      return createElement(Text, {
-        key: state.key,
-        style: styles.blockQuote
+      block = createElement(View, { key: state.key, style: styles. blockQuoteBlock })
+
+      const blockText = createElement(Text, {
+        key: state.key + 1,
+        style: styles.blockQuoteText
       }, output(node.content, state))
+
+      return createElement(View, { key: state.key, style: styles.blockQuote }, [block, blockText])
     }
   },
   br: {
