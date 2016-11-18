@@ -33,7 +33,7 @@ export default (styles) => ({
       return createElement(Text, {
         key: state.key,
         style: styles.br
-      }, '\n\n')
+      }, '\n')
     }
   },
   codeBlock: {
