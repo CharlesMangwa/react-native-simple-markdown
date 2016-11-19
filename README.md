@@ -28,7 +28,7 @@ const MyAwesomeApp = () => {
 
       You can **emphasize** what you want, or just _suggest it_ 😏…
 
-      You can even [link your website](http://charlesmangwa.surge.sh) or if you prefer: [email sombedy](mailto:email@somebody.com)
+      You can even [link your website](http://charlesmangwa.surge.sh) or if you prefer: [email somebody](mailto:email@somebody.com)
 
       Spice it up with some GIF 💃:
 
