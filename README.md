@@ -118,7 +118,7 @@ Example:
 Will only apply the default styles for `link` and `url`. You don't need to pass in a rules prop that contained a key for all the styles you don't want and reimplement their styling output anymore.
 
 ### Features
-- `blockQuote` (`<View>`) - Also `blockQuoteBar` and `blockQuoteText`
+- `blockQuote` (`<View>`) - Also `blockQuoteBar` (`<View>`) and `blockQuoteText` (`<Text>`)
 - `br` (`<Text>`)
 - `del` (`<Text>`)
 - `em` (`<Text>`)
