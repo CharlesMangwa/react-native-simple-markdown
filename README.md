@@ -1,15 +1,13 @@
 # react-native-simple-markdown
 [![Build Status](https://travis-ci.org/CharlesMangwa/react-native-simple-markdown.svg?branch=master)](https://travis-ci.org/CharlesMangwa/react-native-simple-markdown)
 [![npm version](https://badge.fury.io/js/react-native-simple-markdown.svg)](https://badge.fury.io/js/react-native-simple-markdown)
-[![npm](https://img.shields.io/npm/dm/react-native-simple-markdown.svg?maxAge=2592000)]()
+[![npm](https://img.shields.io/npm/dm/react-native-simple-markdown.svg?maxAge=2592000)](https://www.npmjs.com/package/react-native-simple-markdown)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
 
 A component for rendering Markdown in React Native with native components, working with both iOS & Android. Pull requests are welcome 😃 🎉!
 
 ## Getting started
 
-`npm install react-native-simple-markdown --save`
-or
 `yarn add react-native-simple-markdown`
 
 ## Usage
@@ -104,8 +102,23 @@ Example:
 </Markdown>
 ```
 
-### Features
+RNSM also allows you to remove easily unwanted styling options without having to pass in rule objects that have their react key implemented/dummied to ignore those styling options.
 
+Example:
+
+```js
+<Markdown
+  styles={ markdownStyles }
+  whitelist={['link', 'url']}
+>
+  { description }
+</Markdown>
+```
+
+Will only apply the default styles for `link` and `url`. You don't need to pass in a rules prop that contained a key for all the styles you don't want and reimplement their styling output anymore.
+
+### Features
+- `blockQuote` (`<View>`) - Also `blockQuoteBar` and `blockQuoteText`
 - `br` (`<Text>`)
 - `del` (`<Text>`)
 - `em` (`<Text>`)
@@ -136,8 +149,7 @@ Example:
 _Most of these elements can be used, but I'm still working on some improvements. Pull requests are welcome!_
 
 - `autolink` (`<Text>`)
-- `blockQuote` (`<Text>`)
-- `codeBlock` (`<View>`)
+- `codeBlock` (`<Text>`)
 
 ## Credits
 

@@ -2,6 +2,15 @@
 
 const styles = {
   view: {},
+  blockQuoteSection: {
+    flexDirection: 'row',
+  },
+  blockQuoteSectionBar: {
+    width: 3,
+    height: null,
+    backgroundColor: '#DDDDDD',
+    marginRight: 15,
+  },
   codeBlock: {
     fontFamily: 'Courier',
     fontWeight: '500',

@@ -17,10 +17,15 @@ export default (styles) => ({
   blockQuote: {
     react: (node, output, state) => {
       state.withinText = true
-      return createElement(Text, {
+      const blockBar = createElement(View, {
         key: state.key,
-        style: styles.blockQuote
+        style: [styles.blockQuoteSectionBar, styles.blockQuoteBar]
+      })
+      const blockText = createElement(Text, {
+        key: state.key + 1,
+        style: styles.blockQuoteText
       }, output(node.content, state))
+      return createElement(View, { key: state.key, style: [styles.blockQuoteSection, styles.blockQuote] }, [blockBar, blockText])
     }
   },
   br: {
