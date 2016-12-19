@@ -21,18 +21,18 @@ import Markdown from 'react-native-simple-markdown'
 
 const MyAwesomeApp = () => {
   return (
-    <Markdown styles={styles}>
-      #Markdown in react-native is so cool!
+    <Markdown styles={markdownStyles}>
+      #Markdown in react-native is so cool! {'\n\n'}
 
-      You can **emphasize** what you want, or just _suggest it_ 😏…
+      You can **emphasize** what you want, or just _suggest it_ 😏…{'\n'}
 
-      You can even [link your website](http://charlesmangwa.surge.sh) or if you prefer: [email somebody](mailto:email@somebody.com)
+      You can even [**link your website**](http://charlesmangwa.surge.sh) or if you prefer: [email somebody](mailto:email@somebody.com){'\n'}
 
-      Spice it up with some GIF 💃:
+      Spice it up with some GIFs 💃:
 
-      ![Some GIF](https://media.giphy.com/media/dkGhBWE3SyzXW/giphy.gif)
+      ![Some GIF](https://media.giphy.com/media/dkGhBWE3SyzXW/giphy.gif){'\n'}
 
-      And even add a cool video 😎!
+      And even add a cool video 😎!{'\n'}
 
       [![A cool video from YT](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](http://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
@@ -41,18 +41,15 @@ const MyAwesomeApp = () => {
   )
 }
 
-const styles = {
+const markdownStyles = {
   heading1: {
-    fontSize: 22,
+    fontSize: 24,
   },
-  strong: {
-    fontSize: 18,
+  link: {
+    color: '#03a9f4',
   },
   paragraph: {
     fontSize: 14,
-  },
-  view: {
-    borderWidth: 1,
   },
 }
 ```
@@ -115,7 +112,7 @@ Example:
 </Markdown>
 ```
 
-Will only apply the default styles for `link` and `url`. You don't need to pass in a rules prop that contained a key for all the styles you don't want and reimplement their styling output anymore.
+`whitelist` will only apply the default styles for `link` and `url`, while `blacklist` will do the opposite. You don't need to pass in a rules prop that contained a key for all the styles you don't want and reimplement their styling output anymore. 
 
 ### Features
 - `blockQuote` (`<View>`) - Also `blockQuoteBar` (`<View>`) and `blockQuoteText` (`<Text>`)
