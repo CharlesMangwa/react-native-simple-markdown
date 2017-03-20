@@ -93,7 +93,7 @@ export default (styles) => ({
       return createElement(Text, {
         key: state.key,
         style: styles.inlineCode
-      }, output(node.content, state))
+      }, node.content)
     }
   },
   link: {
