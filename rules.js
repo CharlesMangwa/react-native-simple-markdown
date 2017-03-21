@@ -197,7 +197,7 @@ export default (styles) => ({
   u: {
     react: (node, output, state) => {
       state.withinText = true
-      return createElement(View, {
+      return createElement(Text, {
         key: state.key,
         style: styles.u
       }, output(node.content, state))
