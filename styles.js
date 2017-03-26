@@ -1,7 +1,6 @@
 /* @flow */
 
 const styles = {
-  view: {},
   blockQuoteSection: {
     flexDirection: 'row',
   },
@@ -61,14 +60,9 @@ const styles = {
   link: {
     textDecorationLine: 'underline',
   },
-  list: {},
   listItem: {
     flexDirection: 'row',
-  },
-  listItemBullet: {
-    fontSize: 20,
-    lineHeight: 20,
-    marginTop: 6,
+    alignItems: 'center',
   },
   listItemNumber: {
     fontWeight: 'bold',
@@ -77,8 +71,6 @@ const styles = {
     textDecorationLine: 'underline',
   },
   paragraph: {
-    marginTop: 10,
-    marginBottom: 10,
     flexWrap: 'wrap',
     flexDirection: 'row',
     alignItems: 'flex-start',

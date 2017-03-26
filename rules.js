@@ -64,11 +64,14 @@ export default (styles) => ({
     }
   },
   heading: {
-    react: (node, output, state) => {
+    react: (node, output, parentState) => {
+      const state = {...parentState}
       state.withinText = true
+      const stylesToApply = [styles.heading, styles['heading' + node.level]]
+      state.stylesToApply = stylesToApply
       return createElement(Text, {
         key: state.key,
-        style: [styles.heading, styles['heading' + node.level]]
+        style: stylesToApply
       }, output(node.content, state))
     }
   },
@@ -138,7 +141,7 @@ export default (styles) => ({
   },
   paragraph: {
     react: (node, output, state) => {
-      return createElement(Text, {
+      return createElement(View, {
         key: state.key,
         style: styles.paragraph
       }, output(node.content, state))
@@ -179,7 +182,8 @@ export default (styles) => ({
     }
   },
   text: {
-    react: (node, output, state) => {
+    react: (node, output, parentState) => {
+      const state = {...parentState}
       // Breaking words up in order to allow for text reflowing in flexbox
       let words = node.content.split(' ')
       words = _.map(words, (word, i) => {
@@ -187,6 +191,7 @@ export default (styles) => ({
         i != words.length - 1 ? word = word + ' ' : null
         const textStyles = [styles.text]
         !state.withinText ? textStyles.push(styles.plainText) : null
+        state.stylesToApply ? textStyles.push(state.stylesToApply) : null
         return createElement(Text, {
           style: textStyles
         }, word)

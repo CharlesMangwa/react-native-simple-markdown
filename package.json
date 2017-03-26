@@ -4,10 +4,10 @@
     "url": "https://github.com/CharlesMangwa/react-native-simple-markdown.git",
     "type": "git"
   },
-  "version": "1.0.60-rc.3",
+  "version": "1.0.60",
   "description": "Render Markdown in React Native with native components (iOS & Android)",
   "main": "index.js",
-  "author": "Charles Mangwa <charlesmangwa@gmail.com> (http://charlesmangwa.surge.sh)",
+  "author": "Charles Mangwa <charlesmangwa@gmail.com> (http://carlito.ninja)",
   "dependencies": {
     "lodash": "^4.15.0",
     "simple-markdown": "git://github.com/CharlesMangwa/simple-markdown.git"
