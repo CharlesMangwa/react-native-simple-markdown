@@ -46,15 +46,23 @@ class Markdown extends Component {
   }
 
   renderContent = (children: string) => {
-    const mergedStyles = Object.assign(styles, this.props.styles)
+    try {
+      const mergedStyles = Object.assign(styles, this.props.styles)
 
-    const rules = this.postProcessRules(_.merge({}, SimpleMarkdown.defaultRules, initialRules(mergedStyles), this.props.rules))
-    const child = Array.isArray(this.props.children)
-      ? this.props.children.join('')
-      : this.props.children
-    const blockSource = child + '\n\n'
-    const tree = SimpleMarkdown.parserFor(rules)(blockSource, { inline: false })
-    return SimpleMarkdown.reactFor(SimpleMarkdown.ruleOutput(rules, 'react'))(tree)
+      const rules = this.postProcessRules(_.merge({}, SimpleMarkdown.defaultRules, initialRules(mergedStyles), this.props.rules))
+      const child = Array.isArray(this.props.children)
+        ? this.props.children.join('')
+        : this.props.children
+      const blockSource = child + '\n\n'
+      const tree = SimpleMarkdown.parserFor(rules)(blockSource, { inline: false })
+      return SimpleMarkdown.reactFor(SimpleMarkdown.ruleOutput(rules, 'react'))(tree)
+    } catch(error) {
+      if(this.props.errorHandler) {
+        this.props.errorHandler(error,children);
+      } else {
+        console.error(error);
+      }
+    }
   }
 
   shouldComponentUpdate(nextProps, nextState) {
