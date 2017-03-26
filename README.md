@@ -12,7 +12,7 @@ A component for rendering Markdown in React Native with native components, worki
 
 ## Usage
 
-All you need is import the `react-native-simple-markdown` and then use the
+All you need to do is import the `react-native-simple-markdown` and then use the
 `<Markdown />` component.
 
 ```js
@@ -61,7 +61,7 @@ const markdownStyles = {
 ## Properties
 ### `styles`
 
-`<Markdown />` will apply its style by default. However you can pass a `styles` prop to customize it has you want.
+`<Markdown />` will apply its style by default. However you can pass a `styles` prop to customize it has you wish.
 
 Example:
 
@@ -116,7 +116,7 @@ Example:
 </Markdown>
 ```
 
-`whitelist` will only apply the default styles for `link` and `url`, while `blacklist` will do the opposite. You don't need to pass in a rules prop that contained a key for all the styles you don't want and reimplement their styling output anymore.
+`whitelist` will only apply `link` and `url` default styles, while `blacklist` will do the opposite. You don't need to pass in a rules prop that contained a key for all the styles you don't want and reimplement their styling output anymore.
 
 ### Styles
 
@@ -134,7 +134,7 @@ Example:
 | `list` | `<View>` | Also `listItem` (`<View>`), `listItemBullet` (`<Text>`), `listItemBulletType` (`Unicode character`), `listItemNumber` (`<Text>`) and `listItemText` (`<Text>`) |
 | `mailTo` | `<Text>` | - |
 | `paragraph` | `<Text>` | - |
-| `plainText` | `<Text>` | Use for styling text without any associated styles |
+| `plainText` | `<Text>` | Used for styling text without any associated styles |
 | `strong` | `<Text>` | - |
 | `table` | `<View>` | - |
 | `tableHeader` | `<View>` | - |
@@ -146,7 +146,7 @@ Example:
 | `u` | `<Text>` | - |
 | `url` | `<Text>` | - |
 | `video` | `<Image>` | Supports YouTube & Vimeo |
-| `view` | `<View>` | This is the `View` container where the Markdown is render |
+| `view` | `<View>` | This is the `View` container where the Markdown is rendered |
 
 ## Credits
 
