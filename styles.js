@@ -125,8 +125,7 @@ const styles = {
     color: '#222222',
   },
   u: {
-    borderColor: '#222222',
-    borderBottomWidth: 1,
+    textDecorationLine: 'underline'
   },
   video: {
     width: 300,
