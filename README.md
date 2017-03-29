@@ -133,7 +133,7 @@ Example:
 | `link` | `<Text>` | - |
 | `list` | `<View>` | Also `listItem` (`<View>`), `listItemBullet` (`<Text>`), `listItemBulletType` (`Unicode character`), `listItemNumber` (`<Text>`) and `listItemText` (`<Text>`) |
 | `mailTo` | `<Text>` | - |
-| `paragraph` | `<Text>` | - |
+| `paragraph` | `<View>` | - |
 | `plainText` | `<Text>` | Used for styling text without any associated styles |
 | `strong` | `<Text>` | - |
 | `table` | `<View>` | - |
