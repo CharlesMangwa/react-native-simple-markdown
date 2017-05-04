@@ -217,7 +217,7 @@ export default (styles) => ({
       return createElement(Text, {
         key: state.key,
         style: styles.url,
-        onPress: openURL(node.target)
+        onPress: openUrl(node.target)
       }, output(node.content, state))
     }
   }
