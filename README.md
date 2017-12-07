@@ -10,6 +10,10 @@ A component for rendering Markdown in React Native with native components, worki
 
 `yarn add react-native-simple-markdown`
 
+## Future
+
+If you've been using this lib for a short/long time or are interesting in shaping it for the future: [just chime in and share your thoughts with us](https://github.com/CharlesMangwa/react-native-simple-markdown/issues/75)!
+
 ## Usage
 
 All you need to do is import the `react-native-simple-markdown` and then use the
