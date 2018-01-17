@@ -212,7 +212,7 @@ export default (styles) => ({
   url: {
     react: (node, output, state) => {
       state.withinText = true
-      const openUrl = (url) => {
+      const openURL = (url) => {
         Linking.openURL(url).catch(error => console.warn('An error occurred: ', error))
       }
       return createElement(Text, {
