@@ -193,7 +193,8 @@ export default (styles) => ({
         !state.withinText ? textStyles.push(styles.plainText) : null
         state.stylesToApply ? textStyles.push(state.stylesToApply) : null
         return createElement(Text, {
-          style: textStyles
+          style: textStyles,
+          key: i,
         }, word)
       })
       return words
@@ -217,7 +218,7 @@ export default (styles) => ({
       return createElement(Text, {
         key: state.key,
         style: styles.url,
-        onPress: openURL(node.target)
+        onPress: openUrl(node.target)
       }, output(node.content, state))
     }
   }
