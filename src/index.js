@@ -49,7 +49,7 @@ class Markdown extends Component<Props, void> {
 
   _renderContent = (children: string): React$Element<any> => {
     try {
-      const mergedStyles = Object.assign(initialStyles, this.props.styles)
+      const mergedStyles = Object.assign({}, initialStyles, this.props.styles)
       const rules = this._postProcessRules(
         _.merge(
           {},
