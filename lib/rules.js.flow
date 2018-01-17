@@ -22,7 +22,7 @@ export default (styles) => ({
         style: [styles.blockQuoteSectionBar, styles.blockQuoteBar]
       })
       const blockText = createElement(Text, {
-        key: state.key + 1,
+        key: state.key,
         style: styles.blockQuoteText
       }, output(node.content, state))
       return createElement(View, { key: state.key, style: [styles.blockQuoteSection, styles.blockQuote] }, [blockBar, blockText])
@@ -193,8 +193,8 @@ export default (styles) => ({
         !state.withinText ? textStyles.push(styles.plainText) : null
         state.stylesToApply ? textStyles.push(state.stylesToApply) : null
         return createElement(Text, {
-          style: textStyles,
           key: i,
+          style: textStyles,
         }, word)
       })
       return words
