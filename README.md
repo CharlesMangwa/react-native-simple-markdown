@@ -1,5 +1,5 @@
 # react-native-simple-markdown
-[![Build Status](https://travis-ci.org/CharlesMangwa/react-native-simple-markdown.svg?branch=master)](https://travis-ci.org/CharlesMangwa/react-native-simple-markdown)
+[![Build Status](https://travis-ci.org/CharlesMangwa/react-native-simple-markdown.svg?branch=next)](https://travis-ci.org/CharlesMangwa/react-native-simple-markdown)
 [![npm downloads](https://img.shields.io/npm/dm/react-native-simple-markdown.svg?maxAge=2592000)](https://www.npmjs.com/package/react-native-simple-markdown)
 [![npm version](https://img.shields.io/npm/v/react-native-simple-markdown.svg)](https://www.npmjs.com/package/react-native-simple-markdown)
 [![Styled with Prettier](https://img.shields.io/badge/styled%20with-prettier-ff69b4.svg?style=square)]()
