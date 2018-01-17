@@ -15,7 +15,7 @@ const styles = {
     fontWeight: '500',
   },
   del: {
-    containerBackgroundColor: '#222222',
+    textDecorationLine: 'line-through',
   },
   em: {
     fontStyle: 'italic',
