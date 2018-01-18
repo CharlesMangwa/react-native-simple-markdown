@@ -4,11 +4,9 @@
 [include]
 
 [libs]
+flow-typed 
 
 [lints]
 
 [options]
 emoji=true
-
-[version]
-^0.61.0
