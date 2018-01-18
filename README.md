@@ -1,7 +1,8 @@
 # react-native-simple-markdown
-[![Build Status](https://travis-ci.org/CharlesMangwa/react-native-simple-markdown.svg?branch=next)](https://travis-ci.org/CharlesMangwa/react-native-simple-markdown)
+[![CircleCI](https://circleci.com/gh/CharlesMangwa/react-native-simple-markdown.svg?style=shield&circle-token=7207fcf84efb2248759b3c51536c57a61d074712)](https://circleci.com/gh/CharlesMangwa/react-native-simple-markdown)
 [![npm downloads](https://img.shields.io/npm/dm/react-native-simple-markdown.svg?maxAge=2592000)](https://www.npmjs.com/package/react-native-simple-markdown)
 [![npm version](https://img.shields.io/npm/v/react-native-simple-markdown.svg)](https://www.npmjs.com/package/react-native-simple-markdown)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Styled with Prettier](https://img.shields.io/badge/styled%20with-prettier-ff69b4.svg?style=square)]()
 
 A component for rendering Markdown in React Native with native components, working with both iOS & Android. Pull requests are welcome! 😃 🎉

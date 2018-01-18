@@ -67,7 +67,8 @@ class Markdown extends Component<Props, void> {
       return SimpleMarkdown.reactFor(SimpleMarkdown.ruleOutput(rules, 'react'))(
         tree,
       )
-    } catch (errors) {
+    }
+    catch (errors) {
       this.props.errorHandler
         ? this.props.errorHandler(errors, children)
         : console.error(errors)

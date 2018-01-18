@@ -9,7 +9,8 @@
   ],
   "author": "Charles Mangwa <charlesmangwa@gmail.com>",
   "scripts": {
-    "lint": "eslint . && flow --show-all-errors",
+    "lint": "eslint .",
+    "flow": "flow --show-all-errors",
     "prepack": "npm run prepack:clean && npm run prepack:babel && npm run prepack:flow",
     "prepack:clean": "rimraf lib",
     "prepack:babel": "babel -d lib src",
