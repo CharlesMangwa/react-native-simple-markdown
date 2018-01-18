@@ -40,8 +40,7 @@ class Markdown extends Component<Props, void> {
     const defaultRules = ['paragraph', 'text']
     if (this.props.whitelist.length) {
       return _.pick(preRules, _.concat(this.props.whitelist, defaultRules))
-    }
-    else if (this.props.blacklist.length) {
+    } else if (this.props.blacklist.length) {
       return _.omit(preRules, _.pullAll(this.props.blacklist, defaultRules))
     }
     return preRules

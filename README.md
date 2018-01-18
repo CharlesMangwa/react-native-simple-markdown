@@ -4,7 +4,7 @@
 [![npm version](https://img.shields.io/npm/v/react-native-simple-markdown.svg)](https://www.npmjs.com/package/react-native-simple-markdown)
 [![Styled with Prettier](https://img.shields.io/badge/styled%20with-prettier-ff69b4.svg?style=square)]()
 
-A component for rendering Markdown in React Native with native components, working with both iOS & Android. Pull requests are welcome 😃 🎉!
+A component for rendering Markdown in React Native with native components, working with both iOS & Android. Pull requests are welcome! 😃 🎉
 
 ## Getting started
 
@@ -12,7 +12,7 @@ A component for rendering Markdown in React Native with native components, worki
 
 ## Future
 
-If you've been using this lib for a short/long time or are interesting in shaping it for the future: [just chime in and share your thoughts with us](https://github.com/CharlesMangwa/react-native-simple-markdown/issues/75)!
+This library is currently being (kinda) completely rewritten. If you've been using this lib for a short/long time or are interesting in shaping it for the future: [just chime in and share your thoughts with us](https://github.com/CharlesMangwa/react-native-simple-markdown/issues/75)!
 
 ## Usage
 
@@ -30,7 +30,7 @@ const MyAwesomeApp = () => {
 
       You can **emphasize** what you want, or just _suggest it_ 😏…{'\n'}
 
-      You can even [**link your website**](http://carlito.ninja) or if you prefer: [email somebody](mailto:email@somebody.com){'\n'}
+      You can even [**link your website**](https://twitter.com/Charles_Mangwa) or if you prefer: [email somebody](mailto:email@somebody.com){'\n'}
 
       Spice it up with some GIFs 💃:
 
@@ -122,35 +122,57 @@ Example:
 
 `whitelist` will only apply `link` and `url` default styles, while `blacklist` will do the opposite. You don't need to pass in a rules prop that contained a key for all the styles you don't want and reimplement their styling output anymore.
 
-### Styles
+### errorHandler
 
-| Property | Type | Features |
-| ------ | ------ |  ------ |
-| `blockQuote` | `<View>` | Also `blockQuoteBar` (`<View>`) and `blockQuoteText` (`<Text>`) |
-| `br` | `<Text>` | - |
-| `del` | `<Text>` | - |
-| `em` | `<Text>` | - |
-| `hr` | `<View>` | - |
-| `heading` | `<Text>` | Also `heading1` through `heading6` |
-| `image` | `<Image>` | You can use `resizeMode` in `<Markdown />` styles prop to set a `resizeMode` |
-| `inlineCode` | `<Text>` | - |
-| `link` | `<Text>` | - |
-| `list` | `<View>` | Also `listItem` (`<View>`), `listItemBullet` (`<Text>`), `listItemBulletType` (`Unicode character`), `listItemNumber` (`<Text>`) and `listItemText` (`<Text>`) |
-| `mailTo` | `<Text>` | - |
-| `paragraph` | `<Text>` | - |
-| `plainText` | `<Text>` | Used for styling text without any associated styles |
-| `strong` | `<Text>` | - |
-| `table` | `<View>` | - |
-| `tableHeader` | `<View>` | - |
-| `tableHeaderCell` | `<View>` | - |
-| `tableRow` | `<View>` | - |
-| `tableRowCell` | `<View>` | - |
-| `tableRowLast` | `<View>` | Inherits from `tableRow` |
-| `text` | `<Text>` | - |
-| `u` | `<Text>` | - |
-| `url` | `<Text>` | - |
-| `video` | `<Image>` | Supports YouTube & Vimeo |
-| `view` | `<View>` | This is the `View` container where the Markdown is rendered |
+If you happened to have an error with your Markdown during the rendering, you can pass a `errorHandler` with a function that will let you see what's going on:
+
+```jsx
+<Markdown
+  errorHandler={(errors, children) => console.log(errors, children)}
+>
+...
+</Markdown>
+
+```
+
+## Styles
+
+Given that the way React Native renders element has evolved in the latest versions (0.48+), we'll have to check manually that every single rule works as expected by:
+- rendering properly on both iOS & Android
+- being able to be styled on both platforms
+- not breaking/overriding others rules when its own is applied
+
+When those 3 criteria are fulfilled, we can validate the **Rendering** column. Feel free to check any of these and send a PR to validate it!
+
+
+
+| Property | Type | Rendering | Features |
+| ------ | ------ |  ------ |  ------ |
+| `blockQuote` | `<View>` | ❌ | Also `blockQuoteBar` (`<View>`) and `blockQuoteText` (`<Text>`) |
+| `br` | `<Text>` | ❌ | - |
+| `del` | `<Text>` | ❌ | - |
+| `em` | `<Text>` | ❌ | - |
+| `hr` | `<View>` | ❌ | - |
+| `heading` | `<Text>` | ❌ | Also `heading1` through `heading6` |
+| `image` | `<Image>` | ❌ | ou can use `resizeMode` in `<Markdown />` styles prop to set a `resizeMode` |
+| `inlineCode` | `<Text>` | ❌ | - |
+| `link` | `<Text>` | ❌ | - |
+| `list` | `<View>` | ❌ | Also `listItem` (`<View>`), `listItemBullet` (`<Text>`), `listItemBulletType` (`Unicode character`), `listItemNumber` (`<Text>`) and `listItemText` (`<Text>`) |
+| `mailTo` | `<Text>` | ❌ | - |
+| `paragraph` | `<View>` | ❌ | - |
+| `plainText` | `<Text>` | ❌ | Used for styling text without any associated styles |
+| `strong` | `<Text>` | ❌ | - |
+| `table` | `<View>` | ❌ | - |
+| `tableHeader` | `<View>` | ❌ | - |
+| `tableHeaderCell` | `<View>` | ❌ | - |
+| `tableRow` | `<View>` | ❌ | - |
+| `tableRowCell` | `<View>` | ❌ | - |
+| `tableRowLast` | `<View>` | ❌ | Inherits from `tableRow` |
+| `text` | `<Text>` | ❌ | - |
+| `u` | `<Text>` | ❌ | - |
+| `url` | `<Text>` | ❌ | - |
+| `video` | `<Image>` | ❌ | Supports YouTube & Vimeo |
+| `view` | `<View>` | ❌ | This is the `View` container where the Markdown is rendered |
 
 ## Credits
 

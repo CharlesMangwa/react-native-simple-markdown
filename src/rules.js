@@ -1,6 +1,5 @@
-import React, { createElement } from 'react'
+import { createElement } from 'react'
 import { Image, Text, View, Linking } from 'react-native'
-import SimpleMarkdown from 'simple-markdown'
 import _ from 'lodash'
 
 export default (styles) => ({
@@ -160,7 +159,8 @@ export default (styles) => ({
     react: (node, output, state) => {
       const headers = _.map(node.header, (content, i) => {
         return createElement(Text, {
-          style: styles.tableHeaderCell
+          style: styles.tableHeaderCell,
+          key: i,
         }, output(content, state))
       })
 
@@ -187,7 +187,6 @@ export default (styles) => ({
       // Breaking words up in order to allow for text reflowing in flexbox
       let words = node.content.split(' ')
       words = _.map(words, (word, i) => {
-        const elements = []
         i != words.length - 1 ? word = word + ' ' : null
         const textStyles = [styles.text]
         !state.withinText ? textStyles.push(styles.plainText) : null
