@@ -1,8 +1,8 @@
 # react-native-simple-markdown
-[![CircleCI](https://circleci.com/gh/CharlesMangwa/react-native-simple-markdown.svg?style=shield&circle-token=7207fcf84efb2248759b3c51536c57a61d074712)](https://circleci.com/gh/CharlesMangwa/react-native-simple-markdown)
+[![CircleCI](https://circleci.com/gh/CharlesMangwa/react-native-simple-markdown.svg?style=shield&circle-token=4a6119afe938ed7305713fece562bb33d6bc22d8)](https://circleci.com/gh/CharlesMangwa/react-native-simple-markdown)
 [![npm downloads](https://img.shields.io/npm/dm/react-native-simple-markdown.svg?maxAge=2592000)](https://www.npmjs.com/package/react-native-simple-markdown)
-[![npm version](https://img.shields.io/npm/v/react-native-simple-markdown.svg)](https://www.npmjs.com/package/react-native-simple-markdown)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![npm version](https://img.shields.io/npm/v/react-native-simple-markdown.svg)](https://www.npmjs.com/package/react-native-simple-markdown)
 [![Styled with Prettier](https://img.shields.io/badge/styled%20with-prettier-ff69b4.svg?style=square)]()
 
 A component for rendering Markdown in React Native with native components, working with both iOS & Android. Pull requests are welcome! 😃 🎉
@@ -143,9 +143,7 @@ Given that the way React Native renders element has evolved in the latest versio
 - being able to be styled on both platforms
 - not breaking/overriding others rules when its own is applied
 
-When those 3 criteria are fulfilled, we can validate the **Rendering** column. Feel free to check any of these and send a PR to validate it!
-
-
+When those 3 criteria are fulfilled, we can validate the **Rendering** column. Feel free to check any of these and send a PR to validate it [on Snack](https://snack.expo.io/By2dzl04G)!
 
 | Property | Type | Rendering | Features |
 | ------ | ------ |  ------ |  ------ |
