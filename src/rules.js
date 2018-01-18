@@ -43,7 +43,7 @@ export default styles => ({
     },
   },
   br: {
-    react: (node, output, state) => (
+    react: (node, output, state) =>
       createElement(
         Text,
         {
@@ -51,8 +51,7 @@ export default styles => ({
           style: styles.br,
         },
         '\n\n',
-      )
-    ),
+      ),
   },
   codeBlock: {
     react: (node, output, state) => {
@@ -110,19 +109,17 @@ export default styles => ({
     },
   },
   hr: {
-    react: (node, output, state) => (
-      createElement(View, { key: state.key, style: styles.hr })
-    ),
+    react: (node, output, state) =>
+      createElement(View, { key: state.key, style: styles.hr }),
   },
   image: {
-    react: (node, output, state) => (
+    react: (node, output, state) =>
       createElement(Image, {
         key: state.key,
         resizeMode: styles.resizeMode ? styles.resizeMode : 'contain',
         source: { uri: node.target },
         style: node.target.match(/youtu|vimeo/) ? styles.video : styles.image,
-      })
-    ),
+      }),
   },
   inlineCode: {
     react: (node, output, state) => {
@@ -140,7 +137,7 @@ export default styles => ({
   link: {
     react: (node, output, state) => {
       state.withinText = true
-      const openUrl = url => {
+      const openUrl = (url) => {
         Linking.openURL(url).catch(error =>
           console.warn('An error occurred: ', error),
         )
@@ -166,7 +163,8 @@ export default styles => ({
             { key: state.key, style: styles.listItemNumber },
             `${i + 1} . `,
           )
-        } else {
+        }
+        else {
           bullet = createElement(
             Text,
             { key: state.key, style: styles.listItemBullet },
@@ -193,7 +191,7 @@ export default styles => ({
     },
   },
   newline: {
-    react: (node, output, state) => (
+    react: (node, output, state) =>
       createElement(
         Text,
         {
@@ -201,11 +199,10 @@ export default styles => ({
           style: styles.newline,
         },
         '\n',
-      )
-    ),
+      ),
   },
   paragraph: {
-    react: (node, output, state) => (
+    react: (node, output, state) =>
       createElement(
         View,
         {
@@ -213,8 +210,7 @@ export default styles => ({
           style: styles.paragraph,
         },
         output(node.content, state),
-      )
-    ),
+      ),
   },
   strong: {
     react: (node, output, state) => {
@@ -231,7 +227,7 @@ export default styles => ({
   },
   table: {
     react: (node, output, state) => {
-      const headers = _.map(node.header, (content, i) => (
+      const headers = _.map(node.header, (content, i) =>
         createElement(
           Text,
           {
@@ -239,13 +235,13 @@ export default styles => ({
             key: i,
           },
           output(content, state),
-        )
-      ))
+        ),
+      )
 
       const header = createElement(View, { style: styles.tableHeader }, headers)
 
       const rows = _.map(node.cells, (row, r) => {
-        const cells = _.map(row, (content, c) => (
+        const cells = _.map(row, (content, c) =>
           createElement(
             View,
             {
@@ -253,8 +249,8 @@ export default styles => ({
               style: styles.tableRowCell,
             },
             output(content, state),
-          )
-        ))
+          ),
+        )
         const rowStyles = [styles.tableRow]
         node.cells.length - 1 === r ? rowStyles.push(styles.tableRowLast) : null
         return createElement(View, { key: r, style: rowStyles }, cells)
@@ -304,7 +300,7 @@ export default styles => ({
   url: {
     react: (node, output, state) => {
       state.withinText = true
-      const openURL = url => {
+      const openURL = (url) => {
         Linking.openURL(url).catch(error =>
           console.warn('An error occurred: ', error),
         )

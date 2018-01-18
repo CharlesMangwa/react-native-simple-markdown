@@ -2,7 +2,6 @@
   "parser": "babel-eslint",
   "extends": [
     "airbnb",
-    "prettier",
     "plugin:flowtype/recommended",
     "plugin:react/recommended"
   ],
@@ -19,6 +18,7 @@
     }
   },
   "rules": {
+    "brace-style": ["error", "stroustrup"],
     "function-paren-newline": 0,
     "import/extensions": 0,
     "import/no-unresolved": 0,

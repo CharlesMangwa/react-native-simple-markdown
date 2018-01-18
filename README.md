@@ -148,9 +148,9 @@ When those 3 criteria are fulfilled, we can validate the **Rendering** column. F
 | ------ | ------ |  ------ |  ------ |
 | `blockQuote` | `<View>` | ❌ | Also `blockQuoteBar` (`<View>`) and `blockQuoteText` (`<Text>`) |
 | `br` | `<Text>` | ❌ | - |
-| `del` | `<Text>` | ❌ | - |
+| `del` | `<Text>` | ❌ | - |
 | `em` | `<Text>` | ❌ | - |
-| `hr` | `<View>` | ❌ | - |
+| `hr` | `<View>` | ❌ | - |
 | `heading` | `<Text>` | ❌ | Also `heading1` through `heading6` |
 | `image` | `<Image>` | ❌ | ou can use `resizeMode` in `<Markdown />` styles prop to set a `resizeMode` |
 | `inlineCode` | `<Text>` | ❌ | - |

@@ -126,7 +126,7 @@ const styles: Object = {
   view: {
     minWidth: 1,
     minHeight: 1,
-  }
+  },
 }
 
 export default styles
