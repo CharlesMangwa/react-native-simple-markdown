@@ -25,13 +25,13 @@ jobs:
 
       - run:
           name: Running Linter
-          command: yarn run lint
+          command: yarn lint
 
       - run:
           name: Running Flow
-          command: yarn run flow
+          command: yarn flow
 
       #- run:
       #    name: Running Tests
-      #    command: yarn run test-ci
+      #    command: yarn test-ci
 
