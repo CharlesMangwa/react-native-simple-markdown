@@ -6,12 +6,7 @@
     "plugin:flowtype/recommended",
     "plugin:react/recommended"
   ],
-  "plugins": [
-    "babel",
-    "react",
-    "flowtype",
-    "prettier"
-  ],
+  "plugins": ["babel", "react", "flowtype", "prettier"],
   "env": {
     "browser": true,
     "node": true
@@ -25,11 +20,15 @@
   },
   "rules": {
     "function-paren-newline": 0,
+    "import/extensions": 0,
+    "import/no-unresolved": 0,
     "no-console": 0,
     "no-nested-ternary": 0,
     "no-underscore-dangle": 0,
+    "no-param-reassign": 0,
+    "no-unused-expressions": 0,
+    "react/jsx-filename-extension": 0,
     "react/sort-comp": 0,
     "semi": [2, "never"]
   }
 }
-

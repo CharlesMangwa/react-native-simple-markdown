@@ -1,6 +1,6 @@
 /* @flow */
 
-const styles = {
+const styles: Object = {
   blockQuoteSection: {
     flexDirection: 'row',
   },
