@@ -12,7 +12,7 @@ A component for rendering Markdown in React Native with native components, worki
 
 ## Future
 
-This library is currently being (kinda) completely rewritten. If you've been using this lib for a short/long time or are interesting in shaping it for the future: [just chime in and share your thoughts with us](https://github.com/CharlesMangwa/react-native-simple-markdown/issues/75)! Or give a look to the [styles section](https://github.com/CharlesMangwa/react-native-simple-markdown/tree/next#styles-1), some help is also need there!
+This library is currently being (kinda) completely rewritten. If you've been using this lib for a short/long time or are interesting in shaping it for the future: [just chime in and share your thoughts with us](https://github.com/CharlesMangwa/react-native-simple-markdown/issues/75); or give a look at the [styles section](https://github.com/CharlesMangwa/react-native-simple-markdown/tree/next#styles-1), some help is also need there!
 
 ## Usage
 
