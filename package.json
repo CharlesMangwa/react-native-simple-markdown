@@ -2,24 +2,19 @@
   "name": "react-native-simple-markdown",
   "repository": "https://github.com/CharlesMangwa/react-native-simple-markdown",
   "version": "next",
-  "description": "Render Markdown in React Native with native components (iOS & Android)",
+  "description":
+    "Render Markdown in React Native with native components (iOS & Android)",
   "main": "lib/index.js",
-  "files": [
-    "lib"
-  ],
+  "files": ["lib"],
   "author": "Charles Mangwa <charlesmangwa@gmail.com>",
   "scripts": {
     "lint": "eslint .",
     "flow": "flow --show-all-errors",
-    "prepack": "npm run prepack:clean && npm run prepack:babel && npm run prepack:flow",
+    "prepack":
+      "npm run prepack:clean && npm run prepack:babel && npm run prepack:flow",
     "prepack:clean": "rimraf lib",
     "prepack:babel": "babel -d lib src",
     "prepack:flow": "flow-copy-source -v src lib"
-  },
-  "husky": {
-    "hooks": {
-      "prepush": "pretty-quick --staged"
-    }
   },
   "dependencies": {
     "lodash": "^4.15.0",
@@ -31,28 +26,14 @@
     "react-native": "*"
   },
   "babel": {
-    "presets": [
-      "es2015",
-      "stage-2",
-      "react",
-      "flow"
-    ],
+    "presets": ["es2015", "stage-2", "react", "flow"],
     "env": {
       "production": {
-        "plugins": [
-          "transform-flow-strip-types"
-        ]
+        "plugins": ["transform-flow-strip-types"]
       }
     }
   },
-  "keywords": [
-    "react-native",
-    "native",
-    "markdown",
-    "md",
-    "parse",
-    "parser"
-  ],
+  "keywords": ["react-native", "native", "markdown", "md", "parse", "parser"],
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -64,17 +45,14 @@
     "babel-preset-stage-2": "^6.24.1",
     "eslint": "^4.15.0",
     "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-flowtype": "^2.41.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-prettier": "^2.5.0",
     "eslint-plugin-react": "^7.5.1",
     "flow-bin": "^0.61.0",
     "flow-copy-source": "^1.2.1",
     "husky": "^0.14.3",
-    "prettier": "1.10.2",
     "pretty-quick": "^1.2.2",
     "rimraf": "^2.6.2"
   }

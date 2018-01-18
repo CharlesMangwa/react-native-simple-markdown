@@ -6,7 +6,7 @@
     "plugin:flowtype/recommended",
     "plugin:react/recommended"
   ],
-  "plugins": ["babel", "react", "flowtype", "prettier"],
+  "plugins": ["babel", "react", "flowtype"],
   "env": {
     "browser": true,
     "node": true
