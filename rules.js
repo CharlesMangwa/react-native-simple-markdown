@@ -3,7 +3,7 @@ import { Image, Text, View, Linking } from 'react-native'
 import SimpleMarkdown from 'simple-markdown'
 import _ from 'lodash'
 
-export default (styles) => ({
+export default (styles, props) => ({
   autolink: {
     react: (node, output, state) => {
       state.withinText = true
@@ -105,10 +105,12 @@ export default (styles) => ({
       const openUrl = (url) => {
         Linking.openURL(url).catch(error => console.warn('An error occurred: ', error))
       }
+      const onPress = props.onLinkPress ? props.onLinkPress : openUrl
+
       return createElement(Text, {
         style: node.target.match(/@/) ? styles.mailTo : styles.link,
         key: state.key,
-        onPress: () => openUrl(node.target)
+        onPress: () => onPress(node.target)
       }, output(node.content, state))
     }
   },
