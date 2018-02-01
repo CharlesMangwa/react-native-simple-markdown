@@ -12,7 +12,8 @@ type Props = {
   children?: string,
   rules: Object,
   whitelist: Array,
-  blacklist: Array
+  blacklist: Array,
+  onLinkPress: Function
 }
 
 type DefaultProps = Props & {
@@ -49,7 +50,7 @@ class Markdown extends Component<DefaultProps, Props, void> {
         _.merge(
           {},
           SimpleMarkdown.defaultRules,
-          initialRules(mergedStyles),
+          initialRules(mergedStyles, this.props),
           this.props.rules
         )
       )
