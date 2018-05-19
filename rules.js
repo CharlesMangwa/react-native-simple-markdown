@@ -82,12 +82,17 @@ export default (styles) => ({
   },
   image: {
     react: (node, output, state) => {
-      return createElement(Image, {
-        key: state.key,
-        resizeMode: styles.resizeMode ? styles.resizeMode : 'contain',
-        source: { uri: node.target },
-        style: node.target.match(/youtu|vimeo/) ? styles.video : styles.image
-      })
+      return node.target ?
+        createElement(Image, {
+          key: state.key,
+          resizeMode: styles.resizeMode ? styles.resizeMode : 'contain',
+          source: { uri: node.target },
+          style: node.target.match(/youtu|vimeo/) ? styles.video : styles.image
+        }) :
+        createElement(Text, {
+          key: state.key,
+          style: styles.text
+        }, node.alt);
     }
   },
   inlineCode: {
@@ -106,9 +111,9 @@ export default (styles) => ({
         Linking.openURL(url).catch(error => console.warn('An error occurred: ', error))
       }
       return createElement(Text, {
-        style: node.target.match(/@/) ? styles.mailTo : styles.link,
+        style: node.target ? node.target.match(/@/) ? styles.mailTo : styles.link : styles.text,
         key: state.key,
-        onPress: () => openUrl(node.target)
+        onPress: () => node.target ? openUrl(node.target) : null
       }, output(node.content, state))
     }
   },
