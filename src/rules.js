@@ -96,7 +96,7 @@ export default styles => ({
     react: (node, output, parentState) => {
       const state = { ...parentState }
       state.withinText = true
-      const stylesToApply = [styles.heading, styles[`heading ${node.level}`]]
+      const stylesToApply = [styles.heading, styles[`heading${node.level}`]]
       state.stylesToApply = stylesToApply
       return createElement(
         Text,
