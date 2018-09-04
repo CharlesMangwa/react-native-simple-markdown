@@ -12,12 +12,14 @@ type Props = {
   children?: string,
   rules: Object,
   whitelist: Array,
-  blacklist: Array
-}
+  blacklist: Array,
+  allowFontScaling?: boolean
+};
 
 type DefaultProps = Props & {
-  children: string
-}
+  children: string,
+  allowFontScaling: boolean
+};
 
 class Markdown extends Component<DefaultProps, Props, void> {
   static defaultProps = {
@@ -25,7 +27,8 @@ class Markdown extends Component<DefaultProps, Props, void> {
     children: '',
     rules: {},
     whitelist: [],
-    blacklist: []
+    blacklist: [],
+    allowFontScaling: true
   }
 
   /** Post processes rules to strip out unwanted styling options
@@ -49,7 +52,7 @@ class Markdown extends Component<DefaultProps, Props, void> {
         _.merge(
           {},
           SimpleMarkdown.defaultRules,
-          initialRules(mergedStyles),
+          initialRules(mergedStyles, this.props.allowFontScaling),
           this.props.rules
         )
       )
