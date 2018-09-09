@@ -281,6 +281,8 @@ export default styles => ({
           word,
         )
       })
+      //Reset withinText
+      parentState.withinText = false
       return words
     },
   },
