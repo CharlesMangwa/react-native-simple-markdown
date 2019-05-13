@@ -174,7 +174,7 @@ export default styles => ({
           )
         }
         const listItemText = createElement(
-          Text,
+          View,
           { key: state.key + 1, style: styles.listItemText },
           output(item, state),
         )
