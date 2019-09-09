@@ -4,6 +4,7 @@
 
 import { Component, ReactNode } from 'react';
 import { ViewStyle, TextStyle, ImageStyle, StyleProp } from 'react-native';
+import styles from './styles';
 
 export interface ReactNativeSimpleMarkdown { }
 export type ValidRules =
@@ -48,7 +49,7 @@ export interface Rule {
 export type Rules = Partial<{ [key in ValidRules]: Rule }>;
 
 export interface Props {
-  styles?: { [key: string]: StyleProp<ViewStyle> | StyleProp<TextStyle> | StyleProp<ImageStyle> };
+  styles: { [key in keyof typeof styles]: StyleProp<ViewStyle> | StyleProp<TextStyle> | StyleProp<ImageStyle> };
   children?: string | string[];
   rules?: Rules;
   whitelist?: string[];
