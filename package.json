@@ -2,22 +2,22 @@
   "name": "react-native-simple-markdown",
   "repository": "https://github.com/CharlesMangwa/react-native-simple-markdown",
   "version": "next",
-  "description":
-    "Render Markdown in React Native with native components (iOS & Android)",
+  "description": "Render Markdown in React Native with native components (iOS & Android)",
   "main": "lib/index.js",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "author": "Charles Mangwa <charlesmangwa@gmail.com>",
   "scripts": {
     "lint": "eslint .",
     "flow": "flow --show-all-errors",
-    "prepack":
-      "npm run prepack:clean && npm run prepack:babel && npm run prepack:flow",
+    "prepack": "npm run prepack:clean && npm run prepack:babel && npm run prepack:flow",
     "prepack:clean": "rimraf lib",
     "prepack:babel": "babel -d lib src",
     "prepack:flow": "flow-copy-source -v src lib"
   },
   "dependencies": {
-    "lodash": "^4.15.0",
+    "lodash": "^4.17.20",
     "prop-types": "^15.6.0",
     "simple-markdown": "^0.5.2"
   },
@@ -26,14 +26,28 @@
     "react-native": "*"
   },
   "babel": {
-    "presets": ["es2015", "stage-2", "react", "flow"],
+    "presets": [
+      "es2015",
+      "stage-2",
+      "react",
+      "flow"
+    ],
     "env": {
       "production": {
-        "plugins": ["transform-flow-strip-types"]
+        "plugins": [
+          "transform-flow-strip-types"
+        ]
       }
     }
   },
-  "keywords": ["react-native", "native", "markdown", "md", "parse", "parser"],
+  "keywords": [
+    "react-native",
+    "native",
+    "markdown",
+    "md",
+    "parse",
+    "parser"
+  ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
